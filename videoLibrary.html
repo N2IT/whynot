@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .text-box {
+    width: 100%;
+    max-height: 270px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    top: -10px;
+
+  }
+
+  @media only screen and (max-width: 960px) .text-box {
+    width: 100%;
+    max-height: 270px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    top: -10px;
+
+  }
+
+  .h2-titles {
+    text-align: left;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .paragraph-copy {
+    text-align: left;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 150px;
+  }
+
+  /* nav bar */
+
+
+  @media only screen and (min-width: 1200px){
+  .dot-image {
+    max-width: 20px;
+    position: relative;
+    margin-left: -36px;
+  }
+  .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    left: 490px;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:click {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+}
+
+@media only screen and (max-width: 800px){
+  .dot-image {
+    max-width: 20px;
+    position: relative;
+    margin-left: -138px;
+  }
+
+  .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    left: 490px;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+}
+
+  /* .dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .dropdown {
+    position: relative;
+    left: 490px;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  } */
+
+
+  /* Flexbox Style */
+    {
+    box-sizing: border-box
+  }
+
+  @media (min-width: 1200px) {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+      margin-left: 217px;
+      margin-right: -136px;
+      align-items: flex-start | flex-end;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0 4px;
+    }
+  }
+
+  /* Create two equal columns that sits next to each other */
+
+  @media (min-width: 1200px) .column {
+    flex: 100%;
+    max-width: 100%;
+    padding: 0 -8px;
+    /* margin-left: 168px;
+    margin-right: -164px; */
+  }
+
+  @media (max-width: 800px) {
+    .column {
+      flex: 25%;
+      max-width: 25%;
+      padding: 0 -8px;
+    }
+  }
+
+  /* Responsive layout - makes a one column-layout instead of two-column layout */
+  /* @media (max-width: 800px) {
+    .flex-container {
+      flex-direction: column;
+    }
+  } */
+
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  /* @media (max-width: 800px) {
+    .column {
+      flex: 50%;
+      max-width: 50%;
+    }
+  } */
+
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media (max-width: 600px) {
+    .column {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
+</style>
+
+<body>
+
+  <div class="row">
+
+    <div class="column">
+      <h2 class="header-callouts">Visual Learning</h2>
+      <p class="sub-head-callouts">
+        We supply our customers with a library of Tech Tips and demonstrational videos to help you raise your tent product effectively. Our tent instructional videos range from step-by-step guides for tent assembly products, repairs, and full tent
+        installations.
+      </p>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/JpeeqAqRclE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+
+        <div class="dropdown">
+          <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+          <div class="dropdown-content">
+            <a href="https://rainiertents.com/power-wall">Power Walls</a>
+          </div>
+        </div>
+        <div class="text-box" style="background-color: #174f8a;">
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Rainier Power Walls
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            Rainier Power Walls feature the strongest retention system available in the market today, the SRS™ Side Retention System. It is designed to keep the screen mesh stable and allows for worry-free use of your screen, even in high wind
+            conditions. Unlike other screen systems, your Rainier SRS™ Power Wall can be left down when the wind blows!
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/Dgj5b4uQXNw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="dropdown">
+          <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+          <div class="dropdown-content">
+            <a href="https://rainiertents.com/tent-parts-tools/stake-puller.html">Stake Puller</a>
+            <a href="https://rainiertents.com/tent-parts-tools/stake-puller/complete.html">Complete</a>
+            <a href="https://rainiertents.com/tent-parts-tools/stake-puller/gas-powered.html">Gas Powered</a>
+            <a href="https://rainiertents.com/tent-parts-tools/stake-puller/components.html">Components</a>
+          </div>
+        </div>
+
+        <div class="container" style="text-align: left;">
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            The Force Stake Puller</h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            The “FORCE” stake puller has been designed by industry experts to increase your stake-pulling efficiency and save you time and money. This unique piece of equipment will reduce labor time and effort by 70–80% and will easily remove
+            the toughest tent stake.
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/_-QKDPlkVdo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+
+        <div class="dropdown">
+          <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+          <div class="dropdown-content">
+            <a href="https://rainiertents.com/tent-fabric/event-tent-liners.html">Event Tent Liners</a>
+            <a href="https://rainiertents.com/tent-fabric/sidewalls.html">Sidewalls</a>
+            <a href="https://rainiertents.com/tent-fabric/tops.html">Tent Tops</a>
+          </div>
+        </div>
+
+        <div class="container" style="text-align: left;">
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Rainier Tent Fabric Repair</h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            This video will cover the most efficient fabric repair tools and tactics.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/AriazgjhDqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+
+        <div class="dropdown">
+          <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+          <div class="dropdown-content">
+            <a href="https://rainiertents.com/tent-parts-tools/frame.html">Frame Install Tools</a>
+            <a href="https://rainiertents.com/tent-parts-tools/tops.html">Top Install Tools</a>
+            <a href="https://rainiertents.com/tent-parts-tools/repair.html">Repair Tools</a>
+          </div>
+        </div>
+
+        <div class="container" style="text-align: left;">
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Rainier Tent Install - Instructional Video
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            We bring this expertise to the partnership that develops between the users of tenting equipment and the manufacturer. Our advice is available 24 x 7 and we pride ourselves in providing customers the information they need to overcome
+            both the immediate and the long terms challenges of operating a event tent rental business.
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/Czt5rNgtNZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://www.rainier.com/">Rainier Industries</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Who is Rainier Industries?
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            Today, Rainier Industries is a uniquely positioned custom manufacturer with plants located in Washington State and North Carolina. With over 200,000 square feet of manufacturing space and approximately 300 employees, the company has
+            come a long way from its downtown Seattle storefront and seven employees!
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/ZGdF9b3pxg4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://rainiertents.com/tent-fabric/event-tent-liners/skyliner-liners.html">SkyLiners</a>
+              <a href="https://rainiertents.com/tent-fabric/event-tent-liners/frame-tent-liners.html">Frame Tent Liners</a>
+              <a href="https://rainiertents.com/tent-fabric/event-tent-liners/structure-tent-liners.html">Modular Structure Liners</a>
+              <a href="https://rainiertents.com/tent-fabric/event-tent-liners/pole-tent-liners.html">Pole Tent Liners</a>
+              <a href="https://rainiertents.com/tent-fabric/event-tent-liners/high-peak-tent-liners.html">High Peak Tent Liners</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Baytex Tent Liner Install
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            Rainier Tent and Baytex USA Tent Liners are the perfect fit. This video provides a step-by-step guide to installing a tent liner inside your tent. Instructions for a MOD Liner - Single Rail installation, include all the hardware
+            techniques.
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ok9RHhYhX4g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://rainiertents.com/trex-tent-jack/">T-Rex Tent Jack</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            T-Rex Tent Jack Instructions
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            The T-Rex is arguably the most innovative tent assembly tool on the market today. This dynamic system eliminates the need for canopy jacks and increases labor savings for your company.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/0VIH-btQxq0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://rainiertents.com/tent-styles/full-strength-tent-styles.html">Full Strength Tent</a>
+              <a href="https://rainiertents.com/tent-styles/lite-track-tent-styles.html">Lite Track Tent</a>
+              <a href="https://rainiertents.com/tent-styles/west-coast-tent-styles.html">West Coast Style Tent</a>
+              <a href="https://rainiertents.com/tent-styles/high-peak-tent-styles.html">High Peak Tent</a>
+              <a href="https://rainiertents.com/geoflex-stretch-tent.html/">GeoFlex Stretch Tent</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Custom Tents for Event Venues
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            CenterPoint Church envisioned a beautiful space to gather and make a difference in their community with a Rainier Tent. Check out this video for a full tour and gather some ideas for your next tent setup!
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/EU7rwux0tLc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://rainiertents.com/geoflex-stretch-tent.html/">GeoFlex Stretch Tent</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            The GeoFlex Stretch Tent
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            The GeoFlex event tent canopy fabric is reinforced at it’s stress points and made from high quality, fire rated, UV protected, two way stretch fabric with a PVC coating. GeoFlex canopy seams are high frequency welded, making them 100%
+            waterproof and incredibly durable.
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/pZm9gZuJnIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://rainiertents.com/">Why Rainier Tent?</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Rainier Tent Customer Testimonials
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            Rainier Tent offers specialized products in response to urgent needs associated with healthcare facilities, government agencies, Departments of Health, and Disaster Response/Relief Agencies.
+          </p>
+        </div>
+      </div>
+
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/8wRtmnUKSXw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="text-box" style="background-color: #174f8a;">
+        <div class="container" style="text-align: left;">
+
+          <div class="dropdown">
+            <img class="dot-image" source src="https://rainiertents.com/wp/wp-content/uploads/sites/3/2021/11/dots.png" />
+            <div class="dropdown-content">
+              <a href="https://rainiertents.com/tent-styles/full-strength-tent-styles.html">Full Strength Tent</a>
+              <a href="https://rainiertents.com/tent-styles/lite-track-tent-styles.html">Lite Track Tent</a>
+              <a href="https://rainiertents.com/tent-styles/west-coast-tent-styles.html">West Coast Style Tent</a>
+              <a href="https://rainiertents.com/tent-styles/high-peak-tent-styles.html">High Peak Tent</a>
+              <a href="https://rainiertents.com/geoflex-stretch-tent.html/">GeoFlex Stretch Tent</a>
+            </div>
+          </div>
+
+          <h2 class="h2-titles" style="padding-left: 1rem;">
+            Tents for Restaurants
+          </h2>
+          <p class="paragraph-copy" style="padding-left: 1rem; padding-right: 1rem;">
+            Rainier Tent is providing tents to restaurants, dining areas, food courts, and more. We spoke with the owner of Red Hills Market in Dundee, OR, Jody Kropf to hear his story about providing additional outdoor seating to his customers!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
